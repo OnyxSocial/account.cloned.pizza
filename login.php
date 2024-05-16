@@ -8,7 +8,7 @@
 <body>
     <h1>Log into your Onyx account</h1>
     <p>Username</p>
-    <form action="login1.php" method="get">
+    <form action="auth.php" method="get">
         <input type="text" id="usrnm">
         <input type="password" id="pswrd">
     </form>
