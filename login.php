@@ -19,7 +19,7 @@
 session_start();
 $servername = "localhost";
 $username = "root";
-$password = "your_password";
+$password = "";
 $dbname = "onyx";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

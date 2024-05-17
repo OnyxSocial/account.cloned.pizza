@@ -1,8 +1,7 @@
 Users Table
 This table stores information about each user.
 
-sql
-Copy code
+
 CREATE TABLE Users (
     UserID INT PRIMARY KEY AUTO_INCREMENT,
     Username VARCHAR(50) UNIQUE NOT NULL,
@@ -16,8 +15,6 @@ CREATE TABLE Users (
 Posts Table
 This table stores posts made by users.
 
-sql
-Copy code
 CREATE TABLE Posts (
     PostID INT PRIMARY KEY AUTO_INCREMENT,
     UserID INT NOT NULL,
@@ -29,8 +26,7 @@ CREATE TABLE Posts (
 Comments Table
 This table stores comments on posts.
 
-sql
-Copy code
+
 CREATE TABLE Comments (
     CommentID INT PRIMARY KEY AUTO_INCREMENT,
     PostID INT NOT NULL,
@@ -43,8 +39,7 @@ CREATE TABLE Comments (
 Likes Table
 This table stores likes on posts.
 
-sql
-Copy code
+
 CREATE TABLE Likes (
     LikeID INT PRIMARY KEY AUTO_INCREMENT,
     PostID INT NOT NULL,
@@ -57,8 +52,7 @@ CREATE TABLE Likes (
 Friendships Table
 This table stores user friendships.
 
-sql
-Copy code
+
 CREATE TABLE Friendships (
     User1ID INT NOT NULL,
     User2ID INT NOT NULL,
@@ -72,8 +66,7 @@ CREATE TABLE Friendships (
 Messages Table
 This table stores private messages between users.
 
-sql
-Copy code
+
 CREATE TABLE Messages (
     MessageID INT PRIMARY KEY AUTO_INCREMENT,
     SenderID INT NOT NULL,
@@ -86,31 +79,31 @@ CREATE TABLE Messages (
 Example of Inserting Data
 Here are some examples of inserting data into these tables.
 
-sql
-Copy code
--- Inserting a new user
+
+
 INSERT INTO Users (Username, Email, PasswordHash, FullName, Bio, ProfilePictureURL)
 VALUES ('johndoe', 'johndoe@example.com', 'hashed_password', 'John Doe', 'Hello, I am John!', 'http://example.com/profile/johndoe.jpg');
 
--- Inserting a new post
+
 INSERT INTO Posts (UserID, Content, ImageURL)
 VALUES (1, 'This is my first post!', 'http://example.com/images/post1.jpg');
 
--- Inserting a comment
+
 INSERT INTO Comments (PostID, UserID, Content)
 VALUES (1, 2, 'Nice post!');
 
--- Inserting a like
+
 INSERT INTO Likes (PostID, UserID)
 VALUES (1, 2);
 
--- Sending a friend request
+
 INSERT INTO Friendships (User1ID, User2ID)
 VALUES (1, 2);
 
--- Sending a message
+
 INSERT INTO Messages (SenderID, ReceiverID, Content)
 VALUES (1, 2, 'Hello! How are you?');
+
 Database Relationships
 Each user can create multiple posts, comments, likes, and messages.
 Posts can have multiple comments and likes.
